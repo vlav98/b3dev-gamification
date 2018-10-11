@@ -1,0 +1,7 @@
+Modèle MVC :
+M - Modèle
+	Là où le PHP communique avec la base de données 
+V - Vue
+	Permet d'afficher le visuel du site
+C - Controle
+	Permet de créer des liens entre chaque fichier
