@@ -1,14 +1,14 @@
 <?php
 
 require_once './M/database.php';
-try
+/*try
 {
 $sql="SELECT * FROM article";
 $st=$db->prepare($sql);
 
 if (!$sql) throw new Exception( mysql_error() );
 }
-catch (Exception $e) { die( $e->getMessage() ); }
+catch (Exception $e) { die( $e->getMessage() ); }*/
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
