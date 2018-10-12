@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -6,47 +6,58 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="./V/css/style.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script type="text/javascript">
-		$('.form').find('input, textarea').on('keyup blur focus', function (e) {
-			var $this = $(this),
-			label = $this.prev('label');
-
-			if (e.type === 'keyup') {
-			if ($this.val() === '') {
-			label.removeClass('active highlight');
-			} else {
-			label.addClass('active highlight');
-			}
-			} else if (e.type === 'blur') {
-			if( $this.val() === '' ) {
-			label.removeClass('active highlight'); 
-			} else {
-			label.removeClass('highlight');   
-			}   
-			} else if (e.type === 'focus') {
-
-			if( $this.val() === '' ) {
-			label.removeClass('highlight'); 
-			} 
-			else if( $this.val() !== '' ) {
-			label.addClass('highlight');
-			}
-			}
-		});
-
-		$('.tab a').on('click', function (e) {  
-			e.preventDefault();  
-			$(this).parent().addClass('active');
-			$(this).parent().siblings().removeClass('active');  
-			target = $(this).attr('href');
-			('.tab-content > div').not(target).hide();
-			$(target).fadeIn(600);
-		});
-	</script>
 </head>
 <body>
 <div class="form">
-      
+    <script type="text/javascript">
+		$(".form")
+		.find("input, textarea")
+		.on("keyup blur focus", function(e) {
+		var $this = $(this),
+		label = $this.prev("label");
+
+		if (e.type === "keyup") {
+		if ($this.val() === "") {
+		label.removeClass("active highlight");
+		} else {
+		label.addClass("active highlight");
+		}
+		} else if (e.type === "blur") {
+		if ($this.val() === "") {
+		label.removeClass("active highlight");
+		} else {
+		label.removeClass("highlight");
+		}
+		} else if (e.type === "focus") {
+		if ($this.val() === "") {
+		label.removeClass("highlight");
+		} else if ($this.val() !== "") {
+		label.addClass("highlight");
+		}
+		}
+	});
+
+	$(".tab a").on("click", function(e) {
+		e.preventDefault();
+
+		$(this)
+		.parent()
+		.addClass("active");
+		$(this)
+		.parent()
+		.siblings()
+		.removeClass("active");
+
+		target = $(this).attr("href");
+
+		$(".tab-content > div")
+		.not(target)
+		.hide();
+
+		$(target).fadeIn(600);
+	});
+	</script>
+	  
       <ul class="tab-group">
         <li class="tab active"><a href="#signup">Sign Up</a></li>
         <li class="tab"><a href="#login">Log In</a></li>

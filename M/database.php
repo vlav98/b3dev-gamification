@@ -13,4 +13,11 @@ mysqli_select_db($link, $db)
 		or die ("erreur d'accès à la base :" . $db);
 }
 
+try {
+	$dbh = new PDO('mysql:host=$host;dbname=$db', $user, $pass);
+} catch (PDOException $e) {
+    print "Erreur !: " . $e->getMessage() . "<br/>";
+    die();
+}
+
 ?>
