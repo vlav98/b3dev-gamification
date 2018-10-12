@@ -1,5 +1,5 @@
 <?php
-$host="locahost";
+$host="localhost";
 $login="root";
 $pass="";
 $db="projet_b3dev";
@@ -9,9 +9,8 @@ $db="projet_b3dev";
 if (! isset ($link)) {
 $link = mysqli_connect($host, $login, $pass) 
 		or die ("erreur de connexion :" . mysqli_connect_error() . 'numéro :' . mysqli_connect_errno()); 
-mysqli_select_db($link, $bd) 
+mysqli_select_db($link, $db) 
 		or die ("erreur d'accès à la base :" . $db);
 }
-
 
 ?>
