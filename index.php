@@ -2,14 +2,14 @@
 if(session_status() == PHP_SESSION_NONE){
 	session_start();
 }
-		
+
 if((count($_GET)!=0) && !(isset($_GET['controle']) && isset($_GET['action']))){
 	require('./V/error404.tpl');
 }
 	
 else{
 	if(count($_GET)==0){
-		$controle="register";
+		$controle="log";
 		$action="getFormConnection";	
 	}
 	

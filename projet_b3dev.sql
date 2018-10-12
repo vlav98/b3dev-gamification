@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 12 Octobre 2018 à 09:31
+-- Généré le :  Ven 12 Octobre 2018 à 11:13
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -84,6 +84,7 @@ CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `user_type` enum('admin','client','seller') NOT NULL,
   `username` varchar(25) NOT NULL,
+  `user_email` varchar(50) NOT NULL,
   `firstname` text NOT NULL,
   `lastname` text NOT NULL,
   `password` varchar(25) NOT NULL,
