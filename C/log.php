@@ -3,11 +3,7 @@
 function getFormConnection()
 {
 	if(isset($_SESSION["User"]) && !empty($_SESSION["User"]))
-<<<<<<< HEAD
 		header("Location:index.php?controle=Services&action=redirect");
-=======
-		header("Location:index.php?controle=services&action=accueil");
->>>>>>> acb2b1b2f599c864b9aac0441b615c88796d6132
 	else
 		require("./V/logs/signup.tpl");
 }

@@ -10,7 +10,7 @@ if((count($_GET)!=0) && !(isset($_GET['controle']) && isset($_GET['action']))){
 else{
 	if(count($_GET)==0){
 		$controle="user";
-		$action="login";	
+		$action="getFormConnection";	
 	}
 	
 	if (isset($_GET['controle']) & isset($_GET['action'])) {

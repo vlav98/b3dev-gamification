@@ -9,8 +9,8 @@
 </head>
 <body>
 <div class="form">
-    <script type="text/javascript">
-		$(".form")
+<script type="text/javascript">
+	$(".form")
 		.find("input, textarea")
 		.on("keyup blur focus", function(e) {
 		var $this = $(this),
@@ -56,105 +56,101 @@
 
 		$(target).fadeIn(600);
 	});
-	</script>
+</script>
 	  
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
-      
-      <div class="tab-content">
-        <div id="signup">   
-          <h1>Inscription</h1>
-          
-<<<<<<< HEAD
-          <form id='signup' action="index.php?controle=user&action=signup" method="post">
-=======
-          <form action="index.php?controle=user&action=signup" method="post">
->>>>>>> acb2b1b2f599c864b9aac0441b615c88796d6132
-          
-          <div class="top-row">
-            <div class="field-wrap">
-              <select name="user_type">
-                <option>
-                  <?php
-                    foreach($user_type as $ut)
-                      echo ("<option>".($ut['user_type']))
-                  ?>
-              </select>
-              <input type="text" required autocomplete="off" />
-            </div>
+<ul class="tab-group">
+  <li class="tab active"><a href="#signup">Sign Up</a></li>
+  <li class="tab"><a href="#login">Log In</a></li>
+</ul>
+  
+<div class="tab-content">
+  <div id="signup">   
+    <h1>Inscription</h1>
+    
+    <form id='signup' action="index.php?controle=user&action=signup" method="post">
+    <div class="top-row">  
+      <div class="field-wrap">
+        <?php echo($data); ?>
+        <select name="user_type">
+          <!--?php
+          foreach($type[] as $type) {
+            <option>
+              echo $type[];
+            </option>
+          }
+          ?-->
+        </select>
+        <input type="text" required="" autocomplete="off">
+      </div>
 
-            <div class="field-wrap">
-              <label>
-                Prénom<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Nom<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
+      <div class="field-wrap">
+        <label>
+          Nom<span class="req">*</span>
+        </label>
+        <input type="text"required autocomplete="off"/>
+      </div>
 
-            <div class="field-wrap">
-              <label>
-                Pseudo<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
-          </div>
+      <div class="field-wrap">
+        <label>
+          Prénom<span class="req">*</span>
+        </label>
+        <input type="text" required autocomplete="off" />
+      </div>
 
-          <div class="field-wrap">
-            <label>
-              Addresse E-mail<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Mot de passe<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <button type="submit" class="button button-block"/>Get Started</button>
-          
-          </form>
+      <div class="field-wrap">
+        <label>
+          Pseudo<span class="req">*</span>
+        </label>
+        <input type="text"required autocomplete="off"/>
+      </div>
+    </div>
 
-        </div>
-        
-        <div id="login">   
-          <h1>Bon Retour!</h1>
-          
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
+    <div class="field-wrap">
+      <label>
+        Addresse E-mail<span class="req">*</span>
+      </label>
+      <input type="email"required autocomplete="off"/>
+    </div>
+    
+    <div class="field-wrap">
+      <label>
+        Mot de passe<span class="req">*</span>
+      </label>
+      <input type="password"required autocomplete="off"/>
+    </div>
+    
+    <button type="submit" class="button button-block"/>Get Started</button>
+    </form>
 
-        </div>
-        
-      </div><!-- tab-content -->
-      
+  </div>
+
+  
+  <div id="login">   
+    <h1>Bon Retour!</h1>
+    
+    <form action="index.php?controle=user&action=login" method="post">
+      <div class="field-wrap">
+      <label for="pseudoEmail">
+        Adresse E-mail ou Pseudo<span class="req">*</span>
+      </label>
+      <input type="email"required autocomplete="off"/>
+    </div>
+    
+    <div class="field-wrap">
+      <label>
+        Password<span class="req">*</span>
+      </label>
+      <input type="password"required autocomplete="off"/>
+    </div>
+    
+    <p class="forgot"><a href="#">Forgot Password?</a></p>
+    
+    <button class="button button-block"/>Log In</button>
+    </form>
+
+  </div>
+  
+</div><!-- tab-content -->
+  
 </div> <!-- /form -->
 </body></html>

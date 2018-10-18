@@ -1,60 +1,35 @@
 <?php
 
-/* page de bienvenue/accueil */
+/* page de bienvenue/accueil 
 function bienvenue(){
 	$profil=  isset($_SESSION['profil'])?$_SESSION['profil']:'';
 	echo('Bienvenue '. $profil['nom'] . ' ' . $profil['prenom']);
-/*	$tests = test($profil['num_grpe']);
+	$tests = test($profil['num_grpe']);
 	require('./modele/etudiant/DeskEtudiantBD.php');
-	require('./vue/etudiant/AccueilEtu.tpl'); */
+	require('./vue/etudiant/AccueilEtu.tpl');
 }
+ */
 
 function getBDDInstance(){
 	require_once('./M/MySQLClass.php');
 	$bdd = MySQL::init("localhost", "projet_b3dev", "root", "");
 	return $bdd;
 }
-	
-function signup(){
-<<<<<<< HEAD
 
-	if(isset($_SESSION["User"]) && !empty($_SESSION["User"]))
-		header("Location:index.php?controle=Services&action=redirect");
-	else {
-		getBDDInstance()->insertData("User", array("user_type", "username", "user_email", "firstname", "lastname", "password"), array($usertype, $username, $email, $fname, $lname, $pass));
-		$_SESSION["User"] = $_POST ["username"];
-		require('./M/UserClass.php'); 
-	}
+function getUserObject(){
+	require_once('./M/UserClass.php');
+	return User::init(getBDDInstance());
 }
 
-function user_type(){
-	$select= "SELECT * FROM Session WHERE idGroupe = '%s'"; 
-	$req = sprintf($select, $idGroupe);
-	$res = mysqli_query($link, $req)	or die (utf8_encode("erreur de requête : ") . $req); 
-
-	if (mysqli_num_rows ($res) == 0) {
-		return false ;
-	}
-	
-	$tab= array();
-
-	$i=0;	
-	while($ligne = $res->fetch_assoc() and isset($ligne)){
-		$tab[$i]=$ligne;
-		$i++;
-	}
-	
-	return $tab;
-=======
-	getBDDInstance()->insertData("User", array("user_type", "username", "user_email", "firstname", "lastname", "password"), array($usertype, $username, $fname, $email, $lname, $pass));
+function signup(){
 	$_SESSION["User"] = $_POST ["username"];
-	require('./M/UserClass.php'); 
->>>>>>> acb2b1b2f599c864b9aac0441b615c88796d6132
+	getBDDInstance()->insertData("User", array("user_type", "username", "user_email", "firstname", "lastname", "password"), array($usertype, $username, $email, $fname, $lname, $pass));
+	header("Location:index.php?controle=Services&action=redirect");
 }
 
 function login(){
-	$_SESSION["User"] = $_POST["usernameLog"];
-	header("Location:index.php?controle=log&action=getFormConnection");
+	$_SESSION["User"] = $_POST["pseudoEmail"];
+	header("Location:index.php?controle=services&action=redirect");
 }
 
 function logout(){
@@ -63,13 +38,16 @@ function logout(){
 	//require('./index.php');
 }
 
+function getFormConnection()
+{
+	if(isset($_SESSION["User"]) && !empty($_SESSION["User"]))
+		header("Location:index.php?controle=services&action=afficherServices");
+	else
+		require("./V/logs/signup.tpl");
+}
+
 
 function addToCart(){
-<<<<<<< HEAD
-	
-=======
-
->>>>>>> acb2b1b2f599c864b9aac0441b615c88796d6132
 }
 	
 /* fonctionne avec questionReponse.php */

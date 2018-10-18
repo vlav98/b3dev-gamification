@@ -36,4 +36,8 @@ class User extends Class
 		}
 		return false;
 	}
+
+	function getUserType(){		
+		echo (getBDDInstance()->fetchData("user_type",array("id_type","type_name"), "",true));
+	}
 }
