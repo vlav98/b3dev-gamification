@@ -16,6 +16,7 @@ function getBDDInstance(){
 }
 	
 function signup(){
+<<<<<<< HEAD
 
 	if(isset($_SESSION["User"]) && !empty($_SESSION["User"]))
 		header("Location:index.php?controle=Services&action=redirect");
@@ -44,6 +45,11 @@ function user_type(){
 	}
 	
 	return $tab;
+=======
+	getBDDInstance()->insertData("User", array("user_type", "username", "user_email", "firstname", "lastname", "password"), array($usertype, $username, $fname, $email, $lname, $pass));
+	$_SESSION["User"] = $_POST ["username"];
+	require('./M/UserClass.php'); 
+>>>>>>> acb2b1b2f599c864b9aac0441b615c88796d6132
 }
 
 function login(){
@@ -59,7 +65,11 @@ function logout(){
 
 
 function addToCart(){
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> acb2b1b2f599c864b9aac0441b615c88796d6132
 }
 	
 /* fonctionne avec questionReponse.php */
