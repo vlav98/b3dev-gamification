@@ -9,13 +9,33 @@ function bienvenue(){
 	require('./vue/etudiant/AccueilEtu.tpl'); */
 }
 
+function getBDDInstance(){
+	require_once('./M/MySQLClass.php');
+	$bdd = MySQL::init("localhost", "projet_b3dev", "root", "");
+	return $bdd;
+}
 	
+function signup(){
+	getBDDInstance()->insertData("User", array("user_type", "username", "user_email", "firstname", "lastname", "password"), array($usertype, $username, $fname, $email, $lname, $pass));
+	$_SESSION["User"] = $_POST ["username"];
+	require('./M/UserClass.php'); 
+}
+
+function login(){
+	$_SESSION["User"] = $_POST["usernameLog"];
+	header("Location:index.php?controle=log&action=getFormConnection");
+}
+
 function logout(){
 	session_destroy();
 	header('Location:index.php');
 	//require('./index.php');
 }
-	
+
+
+function addToCart(){
+
+}
 	
 /* fonctionne avec questionReponse.php */
 /*

@@ -94,11 +94,9 @@ class MySQL{
 		foreach ($columns as $columnName) {
 			$columnsString .= $columnName.",";
 		}
-
 		foreach($columns as $columnName){
 			$prepareParameters .= "?,";
 		}
-
 
 		$prepareInsertInto = "INSERT INTO $table (".preg_replace("/,$/", "", $columnsString).") values(".preg_replace("/,$/","",$prepareParameters).")";
 		$query = $this->dbObject->prepare($prepareInsertInto);
