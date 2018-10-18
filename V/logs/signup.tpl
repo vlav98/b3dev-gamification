@@ -54,21 +54,39 @@
       
       <div class="tab-content">
         <div id="signup">   
-          <h1>Sign Up for Free</h1>
+          <h1>Inscription</h1>
           
-          <form action="/" method="post">
+          <form id='signup' action="index.php?controle=user&action=signup" method="post">
           
           <div class="top-row">
             <div class="field-wrap">
+              <select name="user_type">
+                <option>
+                  <?php
+                    foreach($user_type as $ut)
+                      echo ("<option>".($ut['user_type']))
+                  ?>
+              </select>
+              <input type="text" required autocomplete="off" />
+            </div>
+
+            <div class="field-wrap">
               <label>
-                First Name<span class="req">*</span>
+                Prénom<span class="req">*</span>
               </label>
               <input type="text" required autocomplete="off" />
             </div>
         
             <div class="field-wrap">
               <label>
-                Last Name<span class="req">*</span>
+                Nom<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Pseudo<span class="req">*</span>
               </label>
               <input type="text"required autocomplete="off"/>
             </div>
@@ -76,14 +94,14 @@
 
           <div class="field-wrap">
             <label>
-              Email Address<span class="req">*</span>
+              Addresse E-mail<span class="req">*</span>
             </label>
             <input type="email"required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
-              Set A Password<span class="req">*</span>
+              Mot de passe<span class="req">*</span>
             </label>
             <input type="password"required autocomplete="off"/>
           </div>
@@ -95,7 +113,7 @@
         </div>
         
         <div id="login">   
-          <h1>Welcome Back!</h1>
+          <h1>Bon Retour!</h1>
           
           <form action="/" method="post">
           
