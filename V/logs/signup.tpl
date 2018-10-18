@@ -67,7 +67,7 @@
         <div id="signup">   
           <h1>Sign Up for Free</h1>
           
-          <form action="/" method="post">
+          <form action="index.php?controle=user&action=signup" method="post">
           
           <div class="top-row">
             <div class="field-wrap">
